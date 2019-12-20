@@ -11,7 +11,7 @@ public class Exercise_24
 {
     public static void main(String[] args)
     {
-        File dataFile = new File("src/RomaniFiles/chapter_12/Exercise_24.txt");
+        File dataFile = new File("chapter_12/Exercise_24.txt");
         if (!dataFile.exists())
         {
             System.out.println("File does not exist, generating file...");
@@ -54,4 +54,16 @@ public class Exercise_24
         else
             return ("Full " + String.format("%10.2f", (70000 + Math.random() * 60000)));
     }
+
+
+
+
+
+
+
+
+
+
+
+
 }
