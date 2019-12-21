@@ -6,7 +6,7 @@ public class Exercise_27
 {
     public static void main(String[] args)
     {
-        File dir = new File("Files/chapter_12/Exercise_27");
+        File dir = new File("src/Files/chapter_12/Exercise_27");
 
         String[] filesName = dir.list();
         if (!dir.exists())
