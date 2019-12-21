@@ -1,12 +1,6 @@
 package Chapter_17_Binary_IO;
 
-import java.io.EOFException;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-
-import utilities.Loan;
+import Tests.utilities.Loan;
 
 /**
  * Restore objects from a file

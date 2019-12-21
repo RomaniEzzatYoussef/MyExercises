@@ -1,7 +1,7 @@
 package Chapter_10_Object_Oriented_Thinking;
-import java.util.Random;
+import Tests.utilities.Queue;
 
-import utilities.Queue;
+import java.util.Random;
 
 /**
  * The Queue class

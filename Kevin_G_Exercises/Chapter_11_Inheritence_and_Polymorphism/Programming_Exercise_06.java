@@ -1,10 +1,10 @@
 package Chapter_11_Inheritence_and_Polymorphism;
 
+import Tests.utilities.Loan;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
-
-import utilities.Loan;
 
 /**
  * Use ArrayList

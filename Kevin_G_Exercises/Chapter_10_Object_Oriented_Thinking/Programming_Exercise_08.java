@@ -1,5 +1,5 @@
 package Chapter_10_Object_Oriented_Thinking;
-import utilities.Tax;
+import Tests.utilities.Tax;
 
 /**
  * Financial: the Tax class

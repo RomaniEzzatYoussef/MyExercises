@@ -1,11 +1,11 @@
 package Chapter_21_Sets_and_Maps;
 
+import Tests.utilities.WordOccurrence;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-
-import utilities.WordOccurrence;
 
 /**
  * Revise Listing 21.9, CountOccurrenceOfWords.java

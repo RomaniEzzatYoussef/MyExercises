@@ -1,7 +1,7 @@
 package Chapter_10_Object_Oriented_Thinking;
 
-import utilities.Calculator;
-import utilities.MyString2;
+import Tests.utilities.Calculator;
+import Tests.utilities.MyString2;
 
 /**
  * Calculator

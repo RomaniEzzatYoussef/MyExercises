@@ -1,4 +1,4 @@
-package utilities;
+package Tests.utilities;
 
 import java.awt.geom.Line2D;
 

@@ -1,6 +1,6 @@
 package Chapter_24_Implementing_Lists_Stacks_Queues_and_Priority_Queues;
 
-import utilities.MyArrayList;
+import Tests.utilities.MyArrayList;
 
 /**
  * Add set operations in MyList

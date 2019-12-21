@@ -1,6 +1,6 @@
 package Chapter_23_Sorting;
 
-import utilities.Heap;
+import Tests.utilities.Heap;
 
 /**
  * Heap clone and equals

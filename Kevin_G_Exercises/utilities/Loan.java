@@ -1,4 +1,4 @@
-package utilities;
+package Tests.utilities;
 
 @SuppressWarnings("serial")
 public class Loan implements java.io.Serializable 

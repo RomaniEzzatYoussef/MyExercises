@@ -1,6 +1,6 @@
 package Chapter_10_Object_Oriented_Thinking;
 
-import utilities.MyStringBuilder1;
+import Tests.utilities.MyStringBuilder1;
 
 /**
  * Implement the StringBuilder class

@@ -1,5 +1,5 @@
 package Chapter_10_Object_Oriented_Thinking;
-import utilities.MyDate;
+import Tests.utilities.MyDate;
 
 /**
  * The MyDate class

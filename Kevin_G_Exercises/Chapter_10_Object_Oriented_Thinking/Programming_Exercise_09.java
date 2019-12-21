@@ -1,5 +1,5 @@
 package Chapter_10_Object_Oriented_Thinking;
-import utilities.Course;
+import Tests.utilities.Course;
 
 /**
  * The Course class

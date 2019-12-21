@@ -1,6 +1,6 @@
 package chapter10;
 
-import utilities.StackOfIntegers;
+import Tests.utilities.StackOfIntegers;
 
 /**
  * Displaying the prime numbers

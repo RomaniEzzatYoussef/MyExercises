@@ -1,8 +1,8 @@
 package Chapter_13_Abstract_Classes_and_Interfaces;
 
-import java.math.BigInteger;
+import Tests.utilities.Rational;
 
-import utilities.Rational;
+import java.math.BigInteger;
 
 /**
  * Convert decimals to fractions

@@ -11,7 +11,7 @@ public class Exercise_24
 {
     public static void main(String[] args)
     {
-        File dataFile = new File("chapter_12/Exercise_24.txt");
+        File dataFile = new File("src/RomaniFiles/chapter_12/Exercise_24.txt");
         if (!dataFile.exists())
         {
             System.out.println("File does not exist, generating file...");
@@ -48,22 +48,11 @@ public class Exercise_24
         int position = randNum.nextInt(3);
 
         if (position == 0)
-            return ("Assistant " + String.format("%10.2f", (50000 + Math.random() * 30000)));
+            return ("Assistant " + (50000 + Math.random() * 30000));
         else if (position == 1)
-            return ("Associate " + String.format("%10.2f", (60000 + Math.random() * 45000)));
+            return ("Associate " + (60000 + Math.random() * 45000));
         else
-            return ("Full " + String.format("%10.2f", (70000 + Math.random() * 60000)));
+            return ("Full " + (70000 + Math.random() * 60000));
     }
-
-
-
-
-
-
-
-
-
-
-
 
 }

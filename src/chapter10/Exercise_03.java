@@ -1,6 +1,6 @@
 package chapter10;
 
-import utilities.MyInteger;
+import Tests.utilities.MyInteger;
 /**
  * The MyInteger class
  * Design a class named MyInteger. 

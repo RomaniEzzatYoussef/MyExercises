@@ -1,6 +1,6 @@
 package Chapter_19_Generics;
 
-import utilities.GenericStack;
+import Tests.utilities.GenericStack;
 
 /**
  * Revising Listing 19.1 GenericStack.java

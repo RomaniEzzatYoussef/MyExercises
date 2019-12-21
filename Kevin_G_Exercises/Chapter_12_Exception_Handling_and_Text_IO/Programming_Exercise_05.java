@@ -1,7 +1,7 @@
 package Chapter_12_Exception_Handling_and_Text_IO;
 
-import utilities.IllegalTriangleException;
-import utilities.Triangle;
+import Tests.utilities.IllegalTriangleException;
+import Tests.utilities.Triangle;
 
 /**
  * IllegalTriangleException

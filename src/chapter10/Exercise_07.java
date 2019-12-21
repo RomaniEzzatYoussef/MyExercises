@@ -1,6 +1,6 @@
 package chapter10;
 
-import utilities.Account;
+import Tests.utilities.Account;
 import java.util.Date;
 import java.util.Scanner;
 

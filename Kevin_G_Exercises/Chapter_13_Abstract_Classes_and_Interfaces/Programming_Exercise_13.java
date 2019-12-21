@@ -1,8 +1,8 @@
 package Chapter_13_Abstract_Classes_and_Interfaces;
 
-import java.util.Scanner;
+import Tests.utilities.Course;
 
-import utilities.Course;
+import java.util.Scanner;
 
 /**
  * Enable the Course class cloneable

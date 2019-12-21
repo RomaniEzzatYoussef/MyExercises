@@ -1,4 +1,4 @@
-package utilities;
+package Tests.utilities;
 
 public abstract class MyAbstractList<E> implements MyList<E> 
 {

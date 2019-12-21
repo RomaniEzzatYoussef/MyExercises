@@ -1,11 +1,5 @@
 package Chapter_13_Abstract_Classes_and_Interfaces;
 
-import utilities.Circle;
-import utilities.GeometricObject;
-import utilities.IllegalTriangleException;
-import utilities.Square;
-import utilities.Triangle;
-
 /**
  * The Colorable interface
  * Design an interface named Colorable with a void method named howToColor(). 

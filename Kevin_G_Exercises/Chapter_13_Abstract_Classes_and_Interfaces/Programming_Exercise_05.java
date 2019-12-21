@@ -1,9 +1,9 @@
 package Chapter_13_Abstract_Classes_and_Interfaces;
 
-import utilities.Circle;
-import utilities.GeometricObject;
-import utilities.IllegalTriangleException;
-import utilities.Triangle;
+import Tests.utilities.Circle;
+import Tests.utilities.GeometricObject;
+import Tests.utilities.IllegalTriangleException;
+import Tests.utilities.Triangle;
 
 /**
  * Enable GeometricObject comparable

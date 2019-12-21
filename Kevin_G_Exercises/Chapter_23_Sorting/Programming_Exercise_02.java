@@ -1,12 +1,12 @@
 package Chapter_23_Sorting;
 
+import Tests.utilities.Circle;
+import Tests.utilities.GeometricObjectComparator;
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Random;
 import java.util.Scanner;
-
-import utilities.Circle;
-import utilities.GeometricObjectComparator;
 
 /**
  * Generic merge sort

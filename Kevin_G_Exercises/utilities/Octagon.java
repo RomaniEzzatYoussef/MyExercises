@@ -1,4 +1,4 @@
-package utilities;
+package Tests.utilities;
 
 public class Octagon extends GeometricObject implements Cloneable
 {

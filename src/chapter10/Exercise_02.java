@@ -1,6 +1,6 @@
 package chapter10;
 
-import utilities.BMI;
+import Tests.utilities.BMI;
 
 /**
  * The BMI class

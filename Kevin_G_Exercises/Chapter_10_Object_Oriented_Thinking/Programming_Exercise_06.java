@@ -1,5 +1,5 @@
 package Chapter_10_Object_Oriented_Thinking;
-import utilities.StackOfIntegers;
+import Tests.utilities.StackOfIntegers;
 
 /**
  * Displaying the prime numbers

@@ -1,11 +1,11 @@
 package Chapter_17_Binary_IO;
 
+import Tests.utilities.Loan;
+
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-
-import utilities.Loan;
 
 /**
  * Store Loan objects

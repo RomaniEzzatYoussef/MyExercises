@@ -1,7 +1,7 @@
 package Chapter_22_Developing_Efficient_Algorithms;
 
-import utilities.SudokuGenerator;
-import utilities.SudokuSolver;
+import Tests.utilities.SudokuGenerator;
+import Tests.utilities.SudokuSolver;
 
 /**
  * (Game: recursive Sudoku) 

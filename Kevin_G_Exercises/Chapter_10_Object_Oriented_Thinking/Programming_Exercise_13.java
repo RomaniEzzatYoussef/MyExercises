@@ -1,5 +1,5 @@
 package Chapter_10_Object_Oriented_Thinking;
-import utilities.MyRectangle2D;
+import Tests.utilities.MyRectangle2D;
 
 /**
  * Geometry: the MyRectangle2D class

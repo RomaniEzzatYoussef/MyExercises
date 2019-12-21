@@ -1,6 +1,6 @@
 package chapter10;
 
-import utilities.MyPoint;
+import Tests.utilities.MyPoint;
 
 /**
  * The MyPoint class

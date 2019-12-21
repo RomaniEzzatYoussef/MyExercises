@@ -1,5 +1,5 @@
 package Chapter_10_Object_Oriented_Thinking;
-import utilities.MyInteger;
+import Tests.utilities.MyInteger;
 
 /**
  * The MyInteger class

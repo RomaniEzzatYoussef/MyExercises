@@ -1,9 +1,9 @@
 package Chapter_11_Inheritence_and_Polymorphism;
 
+import Tests.utilities.Course;
+
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import utilities.Course;
 
 /**
  * The Course class

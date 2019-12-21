@@ -1,6 +1,6 @@
 package Chapter_23_Sorting;
 
-import utilities.SortMethods;
+import Tests.utilities.SortMethods;
 
 /**
  * Execution time for sorting

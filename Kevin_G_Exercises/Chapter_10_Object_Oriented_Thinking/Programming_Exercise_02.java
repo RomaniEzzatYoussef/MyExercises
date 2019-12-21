@@ -1,5 +1,5 @@
 package Chapter_10_Object_Oriented_Thinking;
-import utilities.BMI;
+import Tests.utilities.BMI;
 
 /**
  * The BMI class

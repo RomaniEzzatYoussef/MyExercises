@@ -1,8 +1,8 @@
 package Chapter_23_Sorting;
 
-import java.util.Arrays;
+import Tests.utilities.MergeSortRecursive;
 
-import utilities.MergeSortRecursive;
+import java.util.Arrays;
 
 /**
  * Modify merge sort

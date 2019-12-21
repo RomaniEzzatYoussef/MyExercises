@@ -1,7 +1,7 @@
 package Chapter_23_Sorting;
 
-import utilities.Heap;
-import utilities.HeapSort;
+import Tests.utilities.Heap;
+import Tests.utilities.HeapSort;
 
 /**
  * Min-heap

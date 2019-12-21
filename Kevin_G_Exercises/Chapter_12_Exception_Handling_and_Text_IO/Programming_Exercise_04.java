@@ -1,6 +1,6 @@
 package Chapter_12_Exception_Handling_and_Text_IO;
 
-import utilities.Loan;
+import Tests.utilities.Loan;
 
 /**
  * IllegalArgumentException

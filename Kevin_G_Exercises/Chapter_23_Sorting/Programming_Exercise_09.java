@@ -1,8 +1,8 @@
 package Chapter_23_Sorting;
 
-import utilities.GeometricObjectComparator;
-import utilities.Rectangle;
-import utilities.HeapSort;
+import Tests.utilities.GeometricObjectComparator;
+import Tests.utilities.HeapSort;
+import Tests.utilities.Rectangle;
 
 /**
  * Generic Heap using Comparator

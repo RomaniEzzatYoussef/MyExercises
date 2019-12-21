@@ -1,9 +1,9 @@
 package Chapter_23_Sorting;
 
-import java.io.IOException;
+import Tests.utilities.CreateLargeFile;
+import Tests.utilities.ExternalSort;
 
-import utilities.CreateLargeFile;
-import utilities.ExternalSort;
+import java.io.IOException;
 
 /**
  * Execution time for external sorting

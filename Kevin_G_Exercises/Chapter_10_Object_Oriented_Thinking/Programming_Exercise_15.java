@@ -1,8 +1,8 @@
 package Chapter_10_Object_Oriented_Thinking;
 
-import java.util.Scanner;
+import Tests.utilities.MyRectangle2D;
 
-import utilities.MyRectangle2D;
+import java.util.Scanner;
 
 /**
  * Geometry: the bounding rectangle

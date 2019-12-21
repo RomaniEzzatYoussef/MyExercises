@@ -1,5 +1,0 @@
-package chapter3;
-
-
-hallo in file 6
-package chapter3;

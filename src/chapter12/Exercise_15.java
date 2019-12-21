@@ -22,7 +22,7 @@ public class Exercise_15
 	 */
 	public static void main(String[] args) throws IOException 
 	{
-		File fileName = new File("RomaniFiles/chp12_e15.txt");
+		File fileName = new File("Files/chp12_e15.txt");
 		
 		if (!fileName.exists())
 		{

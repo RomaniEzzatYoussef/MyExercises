@@ -1,6 +1,6 @@
 package Chapter_13_Abstract_Classes_and_Interfaces;
 
-import utilities.Circle;
+import Tests.utilities.Circle;
 
 /**
  * Enable Circle comparable

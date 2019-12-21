@@ -1,4 +1,4 @@
-package utilities;
+package Tests.utilities;
 
 public class MyString1 
 {

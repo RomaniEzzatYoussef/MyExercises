@@ -2,7 +2,7 @@ package chapter10;
 
 import java.util.Scanner;
 
-import utilities.StackOfIntegers;
+import Tests.utilities.StackOfIntegers;
 
 public class Exercise_05 
 {

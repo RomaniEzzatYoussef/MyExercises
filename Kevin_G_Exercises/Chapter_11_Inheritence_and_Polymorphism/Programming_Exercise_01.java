@@ -1,7 +1,7 @@
 package Chapter_11_Inheritence_and_Polymorphism;
 
-import utilities.IllegalTriangleException;
-import utilities.Triangle;
+import Tests.utilities.IllegalTriangleException;
+import Tests.utilities.Triangle;
 
 /**
  * The Triangle class

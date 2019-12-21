@@ -1,6 +1,6 @@
 package Chapter_11_Inheritence_and_Polymorphism;
 
-import utilities.MyDate;
+import Tests.utilities.MyDate;
 
 /**
  * The Person, Student, Employee, Faculty, and Staff classes

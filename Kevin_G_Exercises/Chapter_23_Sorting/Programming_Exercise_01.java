@@ -1,12 +1,12 @@
 package Chapter_23_Sorting;
 
+import Tests.utilities.GeometricObjectComparator;
+import Tests.utilities.Rectangle;
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Random;
 import java.util.Scanner;
-
-import utilities.GeometricObjectComparator;
-import utilities.Rectangle;
 
 /**
  * Generic Bubble Sort

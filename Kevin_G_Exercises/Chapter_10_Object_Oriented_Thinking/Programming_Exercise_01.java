@@ -1,5 +1,5 @@
 package Chapter_10_Object_Oriented_Thinking;
-import utilities.Time;
+import Tests.utilities.Time;
 
 /**
  * The Time class

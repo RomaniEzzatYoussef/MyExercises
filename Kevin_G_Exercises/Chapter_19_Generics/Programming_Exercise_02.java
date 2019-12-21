@@ -1,8 +1,8 @@
 package Chapter_19_Generics;
 
-import java.util.Scanner;
+import Tests.utilities.GenericStackInheritance;
 
-import utilities.GenericStackInheritance;
+import java.util.Scanner;
 
 /**
  * Implement GenericStack using inheritance

@@ -1,5 +1,5 @@
 package Chapter_23_Sorting;
-import utilities.HeapSort;
+import Tests.utilities.HeapSort;
 
 /**
  * Generic heap sort

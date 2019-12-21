@@ -1,6 +1,6 @@
 package Chapter_10_Object_Oriented_Thinking;
 
-import utilities.MyCharacter;
+import Tests.utilities.MyCharacter;
 
 /**
  * Implement the Character class
