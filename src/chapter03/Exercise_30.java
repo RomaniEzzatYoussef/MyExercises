@@ -11,7 +11,7 @@ import java.util.Scanner;
  * @author Romani Ezzat
  *
  *
- * Exercise_30
+ * Exercise_30.txt
  *
  */
 public class Exercise_30 

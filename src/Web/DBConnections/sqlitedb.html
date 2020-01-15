@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p></p>
+
+<script type="text/javascript">
+
+    var db = openDatabase('mydb', '1.0', 'my first database', 2 * 1024 * 1024);
+    db.transaction(function (tx) {
+        // here be the transaction
+        // do SQL magic here using the tx object
+        console.log('1');
+
+        tx.executeSql('CREATE TABLE foo (id unique, text)');
+        tx.executeSql('INSERT INTO foo (id, text) VALUES (1, "synergies")');
+        tx.executeSql('INSERT INTO foo (id, text) VALUES (2, "romani")');
+        tx.executeSql('INSERT INTO foo (id, text) VALUES (3, "xx.net")');
+        tx.executeSql('INSERT INTO foo (id, text) VALUES (4, "systeminfo")');
+        console.log('2')
+
+
+        tx.executeSql('SELECT * FROM foo', [id], function (tx, results) {
+            var len = results.rows.length, i;
+            for (i = 0; i < len; i++) {
+                alert(results.rows.item(i).text);
+            }
+        });
+        console.log('3');
+        console.log(list.valueOf());
+
+        //
+        // function prepareDatabase(ready, error) {
+        //     return openDatabase('documents', '1.0', 'Offline document storage', 5*1024*1024, function (db) {
+        //         db.changeVersion('', '1.0', function (t) {
+        //             t.executeSql('CREATE TABLE docids (id, name)');
+        //         }, error);
+        //     });
+        // }
+        //
+        // function showDocCount(db, span) {
+        //     db.readTransaction(function (t) {
+        //         t.executeSql('SELECT COUNT(*) AS c FROM docids', [], function (t, r) {
+        //             span.textContent = r.rows[0].c;
+        //         }, function (t, e) {
+        //             // couldn't read database
+        //             span.textContent = '(unknown: ' + e.message + ')';
+        //         });
+        //     });
+        // }
+        //
+        // prepareDatabase(function(db) {
+        //     // got database
+        //     var span = document.getElementById('doc-count');
+        //     showDocCount(db, span);
+        // }, function (e) {
+        //     // error getting database
+        //     alert(e.message);
+        // });
+
+
+
+</script>
+</body>
+</html>

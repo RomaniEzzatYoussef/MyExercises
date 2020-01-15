@@ -10,13 +10,12 @@ public class DBConecction
 	public static void main(String[] args)
 	{
 		System.out.print("aaaaaaaaa");
-		try {
+		try
+		{
 			DriverManager.registerDriver(new OracleDriver());
 			
-			
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+		} catch (SQLException e)
+		{
 			e.printStackTrace();
 		}
 	}

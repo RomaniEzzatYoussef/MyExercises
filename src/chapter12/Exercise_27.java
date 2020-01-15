@@ -17,13 +17,14 @@ public class Exercise_27
 
         for (String str : filesName)
         {
-            if (str.matches("Exercise[0-9]_[0-9].text"))
+            if (str.matches("Exercise[0-9]+_[0-9]+.text"))
             {
                 StringBuilder strBld = new StringBuilder(str);
                 strBld.insert(str.indexOf('_') - 1, '0');
                 strBld.insert(11, '0');
 
-                new File(str).renameTo(new File(strBld.toString()));
+                new File("src/Files/chapter_12/Exercise_27/" + str).renameTo(
+                        new File("src/Files/chapter_12/Exercise_27/" + strBld.toString()));
                 System.out.println(str + " renamed to " + strBld.toString());
             }
             else

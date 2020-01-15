@@ -59,5 +59,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="jdbc-oracle" level="project" />
+    <orderEntry type="library" name="sqlite-jdbc-3.27.2" level="project" />
   </component>
 </module>

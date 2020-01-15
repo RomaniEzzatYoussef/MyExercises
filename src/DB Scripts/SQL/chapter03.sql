@@ -1,5 +1,5 @@
-              /* CHAPTER 03 
-              
+              /* CHAPTER 03 */
+/*
 Single Row Functions:-
         * Character
         * Number 
@@ -23,15 +23,18 @@ select employee_id , last_name , department_id from employees where initcap(last
 select last_name , length(last_name) from employees;
 select concat(concat(lower(first_name),initcap(' ')) , initcap(last_name)) from employees;
 select last_name , substr(last_name,3 , 5) from employees;
+select last_name , substr(last_name,3) from employees;
 select last_name , instr(lower(last_name) , 'a') from employees;
 select lpad(salary , 10 , '*') from employees;
+select '$' || lpad(salary , 6 , ' ') from employees;
 select rpad((lpad((concat(salary , last_name || job_id)) , 30 , '-')) , 40 , '*') from employees;
 select last_name , instr(lower(last_name) , 'o') , replace(lower(last_name) , 'o' , 'OO') from employees;
-select last_name , trim('a' from lower(last_name)) from employees;
+select last_name , trim('A' from last_name) from employees;
 
-select first_name , upper(&column_name) from employees;
+-- select first_name , upper(&column_name) from employees; -- variables used only in SQL Command Line
+select first_name , upper(LAST_NAME) from employees;
 
-select employee_id , concat(first_name , last_name) NAME , job_id , length(last_name) , instr(last_name , 'a') "contains 'a'?" 
+select employee_id , concat(first_name , ' ') || last_name NAME , job_id , length(last_name) , instr(last_name , 'a') "contains 'a'?"
 from employees
 where substr(job_id , 4) = 'REP';
 
@@ -55,7 +58,7 @@ where commission_pct is not null;
 
 select salary , salary/5 , mod(salary , 5) from employees;
 
-select round(45.923 , 2) , round(45.923 , 0) , round(445.923 , -2) from dual;
+select round(45.923 , 2) , round(45.923 , 0) , round(445.923 , -2) , round(445.923 , -1) from dual;
 select trunc(45.923 , 2) , trunc(45.923) , trunc(45.923 , -1) from dual;
 select last_name , salary , mod(salary , 5000) from employees where lower(job_id) = 'sa_rep';
 
@@ -63,7 +66,7 @@ select last_name , salary , mod(salary , 5000) from employees where lower(job_id
 
 /*          Working With Dates       */
 
-select last_name , hire_date from employees where hire_date < '01-feb-02';
+select last_name , hire_date from employees where hire_date < '01-feb-03';
 select sysdate from dual;
 
 /* Arithmetic with Dates */
@@ -82,6 +85,7 @@ select last_name , (sysdate-hire_date)/7 weeks from employees where department_i
 select sysdate , hire_date , months_between(sysdate , hire_date) , months_between(hire_date , sysdate) from employees;
 select sysdate , add_months(sysdate , 4) , add_months(sysdate , -4) from dual;
 select next_day(sysdate , 'Monday') from dual;
+select next_day(sysdate , 'Thursday') from dual;
 select last_day(sysdate) from dual;
 select round(sysdate) from dual;
 select round(sysdate , 'Month') from dual;
@@ -113,6 +117,7 @@ select employee_id , last_name ,  to_char(hire_date , 'mm/yy') "Monthly Hired" f
 select to_char(sysdate , 'DD/MM/YYYY') from dual;
 select to_char(sysdate , 'Day Month Year') from dual;
 select to_char(sysdate , 'Dy/Mon/Year') from dual;
+select to_char(sysdate , 'DD-Mon-YYYY') from dual;
 
 /* Sample Format Elements of Valid Date Formats*/
 
@@ -125,7 +130,7 @@ select (36*7) / 30 from dual;
 /*      Time Date       */
 
 select to_char(sysdate , 'hh12:mi:ss am') from dual; /* hours and minutes and seconds format*/
-select to_char(sysdate+10 , 'dd "of" Month YYYY  ddspth') from dual; /* ddspth (sp ===> suffixes spell)*/
+select to_char(sysdate+10 , 'dd "of" Month YYYY ddspth yyspth') from dual; /* ddspth (sp ===> suffixes spell)*/
 select to_char(sysdate , 'hh:mi:ss a.m.') from dual;
 select to_char(sysdate , 'cc dd/mm/yyyy  hh24:mi:ss am') from dual;
 select to_char(sysdate , 'ww w ddd dd d sssss') from dual;
@@ -178,7 +183,7 @@ select to_char(next_day(add_months(hire_date , 6) , 'Friday') , 'fmDay, Month dd
     NVL
 */
 select last_name , commission_pct , nvl(commission_pct , 0) from employees where commission_pct is null;;
-select last_name , hire_date , nvl(hire_date , '01-Jan-2017') from employees where hire_date is null;
+select last_name , hire_date , nvl(hire_date , '01-Jan-2020') from employees where hire_date is null;
 select last_name , job_id , nvl(job_id , 'No Job Yet') from employees where job_id is null;;
 
 select last_name , salary , nvl(commission_pct , 0) , (salary*12) + (salary*12*nvl(commission_pct , 0)) an_sal from employees;
@@ -190,28 +195,35 @@ select last_name , salary , commission_pct , nvl2(commission_pct , salary*commis
 select last_name , salary , commission_pct , nvl2(commission_pct , 'SAL+COMM' , 0) income  from employees where department_id in (50,80);
 
 /*   Null IF   doesnot work  */
-select first_name , length(first_name) , last_name , length(last_name) expr1 , NULLIF(length(first_name) , length(last_name)) result from employees;
+select first_name , last_name  , length(first_name) expr1 , length(last_name) expr2 , NULLIF(length(first_name) , length(last_name)) result from employees;
 
 /* Case */
-select first_name , length(first_name) , last_name , length(last_name) expr1 , 
+select first_name , last_name  , length(first_name) expr1 , length(last_name) expr2 ,
 case when length(first_name) = length(last_name) then null else length(first_name) end result 
 from employees;
 
 /* Coalesce  */
 
-select last_name , coalesce(manager_id , commission_pct , -1) comm ,
-case when manager_id = employee_id then -2 else 0 end comm2
-from employees 
-where manager_id is null and commission_pct is null 
+select last_name , MANAGER_ID , COMMISSION_PCT ,   coalesce(manager_id , commission_pct , -1) comm
+from EMPLOYEES
+order by COMMISSION_PCT;
+
+select last_name , commission_pct , MANAGER_ID ,   coalesce(commission_pct , MANAGER_ID  , -1) comm
+from EMPLOYEES
+order by COMMISSION_PCT;
+
+select last_name, MANAGER_ID, COMMISSION_PCT , coalesce(manager_id , commission_pct , -1) comm ,
+case when (MANAGER_ID is null and COMMISSION_PCT is null) then -2 else MANAGER_ID end comm2
+from employees
 order by commission_pct desc;
 
 /*      using CASE expression     */
 
 select last_name , job_id , salary ,
-      case job_id when 'IT_PROG' then 1.10*salary
+      case job_id when 'IT_PROG'  then 1.10*salary
                   when 'ST_CLERK' then 1.15*salary
-                  when 'SA_REP' then 1.20*salary
-      else      salary end   "revised_salary"
+                  when 'SA_REP'   then 1.20*salary
+      else  salary  end            "revised_salary"
 from employees;
 
 
@@ -231,14 +243,15 @@ select last_name , job_id , salary ,
                       'SA_REP' , 1.20*salary , salary) revised_salary
 from employees; 
 
-/* IF THEN*/
+/* IF THEN */
 
--- select last_name , job_id , salary ,
---       if job_id = 'IT_PROG' then salary = 1.10*salary
---       if job_id = 'ST_CLERK' then salary = 1.15*salary
---       if job_id = 'SA_REP' then salary = 1.20*salary
---       else salary = salary
--- from employees;
+select last_name , job_id , salary ,
+      case  job_id when 'IT_PROG'   then  1.10*salary
+                   when 'ST_CLERK'  then  1.15*salary
+                   when  'SA_REP'   then  1.20*salary
+      else salary  end     revised_salary
+from employees
+where job_id in ('IT_PROG' , 'ST_CLERK' , 'SA_REP' , 'AD_PRES');
 
 select last_name , salary , trunc(salary/2000,0),
       decode (trunc(salary/2000,0),
@@ -266,15 +279,16 @@ where last_name like 'J%'
    OR last_name like 'M%'
    OR last_name like 'A%'
 order by last_name;
-select initcap(last_name) "Name" , length(last_name) "Length" from employees where last_name like '&start_letter%' order by last_name;
+select initcap(last_name) "Name" , length(last_name) "Length" from employees where last_name like '&start_letter%' order by last_name; -- SQL COMMAND LINE
 select last_name , round(months_between(sysdate, hire_date)) months_worked from employees order by months_worked;
 select last_name||' earns '||to_char(salary , 'fm$99,999.00')||' monthly but wants '||to_char(salary*3 , 'fm$99,999.00')||'.' "Dream Salaries" from employees;
+select last_name||' earns '|| SALARY ||' monthly but wants '|| SALARY*3 ||'.' "Dream Salaries" from employees;
 select last_name , lpad(salary,15,'$') salary from employees;
 select last_name , rpad(salary,15,'$') salary from employees;
 select last_name , hire_date , to_char(next_day(add_months(hire_date,6) , 'Monday') , 'fmDay, "the" Ddspth "of" Month, YYYY') review from employees;
 select last_name , hire_date , to_char(hire_date-1 , 'd') , to_char(hire_date , 'Day') day from employees order by to_char(hire_date-1 , 'd');
 select last_name , nvl(to_char(commission_pct) , 'No Commission') comm from employees;
-SELECT rpad(last_name , 8) ||' '|| rpad(' ',salary/1000+1,'*') EMPLOYEES_AND_THEIR_SALARIES , salary
+SELECT rpad(last_name , 8 , '-') ||' '|| lpad(salary/1000+1, 20 , '*') EMPLOYEES_AND_THEIR_SALARIES , salary
 FROM employees
 ORDER BY salary desc;
 select job_id , decode(job_id , 'ST_CLERK' , 'E' ,
