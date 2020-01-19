@@ -1,0 +1,55 @@
+/* chapter 01*/ -- Controlling User Access
+
+--The DBA creates users with the CREATE USER statement.
+CREATE USER sarafem
+    IDENTIFIED BY  s;
+
+CREATE USER seha
+    IDENTIFIED BY  s;
+
+CREATE USER mina
+    IDENTIFIED BY m;
+
+CREATE USER keroles
+    IDENTIFIED BY k;
+
+CREATE ROLE manager;
+
+CREATE ROLE assistant;
+
+GRANT create session, create table,
+    create sequence, create view
+    TO manager;
+
+GRANT manager TO sarafem , seha;
+
+ALTER USER seha
+    IDENTIFIED BY seha;
+
+GRANT  select
+    ON     employees
+    TO     assistant;
+
+GRANT assistant to mina , keroles;
+
+GRANT  update (department_name, location_id)
+    ON     departments
+    TO     mina, keroles;
+
+GRANT  select, insert
+    ON     departments
+    TO     sarafem
+    WITH   GRANT OPTION;
+
+GRANT  select
+    ON	  departments
+    TO	  PUBLIC;
+
+REVOKE  select, insert
+    ON      departments
+    FROM    sarafem;
+
+
+
+
+

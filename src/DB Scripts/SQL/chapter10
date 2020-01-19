@@ -1,0 +1,155 @@
+/* chapter 10 */ -- Creating other Schema Objects
+
+-- Schema Objects/ Database Objects (Tables , Views , Index , Sequence , Synonyms)
+
+-- create view
+create view empvu80 as
+    select * from employees
+    where department_id = 80;
+
+CREATE  or replace VIEW  empvu80
+AS SELECT  employee_id, last_name, salary
+   FROM    employees
+   WHERE   department_id = 80;
+
+select * from empvu80;
+
+-- create view using aliases
+CREATE VIEW 	salvu50
+AS SELECT  employee_id ID_NUMBER, last_name NAME,
+           salary*12 ANN_SALARY
+   FROM    employees
+   WHERE   department_id = 50;
+
+-- modifying a View
+CREATE OR REPLACE VIEW empvu80
+            (id_number, name, sal, department_id)
+AS SELECT  employee_id, first_name || ' '
+    || last_name, salary, department_id
+   FROM    employees
+   WHERE   department_id = 80;
+
+-- creating a complex view
+CREATE OR REPLACE VIEW dept_sum_vu
+            (name, minsal, maxsal, avgsal)
+AS SELECT   d.department_name, MIN(e.salary),
+            MAX(e.salary),AVG(e.salary)
+   FROM     employees e JOIN departments d
+    ON       (e.department_id = d.department_id)
+   GROUP BY d.department_name;
+
+select * from dept_sum_vu;
+
+-- Using the With CHECK OPTION CONSTRAINT Clause
+CREATE OR REPLACE VIEW empvu20
+AS SELECT	*
+   FROM     employees
+   WHERE    department_id = 20
+WITH CHECK OPTION CONSTRAINT empvu20_ck ;
+
+-- can't perform modifying on view when using WITH CHECK OPTION CONSTRAINT clause
+update empvu20
+set DEPARTMENT_ID = 10
+where EMPLOYEE_ID = 201;
+
+CREATE OR REPLACE VIEW empvu20
+AS SELECT	*
+   FROM     employees
+   WHERE    department_id = 20;
+
+update empvu20
+set DEPARTMENT_ID = 10
+where EMPLOYEE_ID = 201;
+
+-- ensure that no DML operations on view
+CREATE OR REPLACE VIEW empvu20
+AS SELECT	*
+   FROM     employees
+   WHERE    department_id = 20
+With READ ONLY;
+
+--Denying DML Operations
+CREATE OR REPLACE VIEW empvu10
+            (employee_number, employee_name, job_title)
+AS SELECT	employee_id, last_name, job_id
+   FROM     employees
+   WHERE    department_id = 10
+WITH READ ONLY ;
+
+-- : cannot perform a DML operation on a read-only view
+delete from empvu10
+where empvu10.employee_number = 200;
+
+-- Removing a View
+DROP VIEW empvu80;
+
+
+--Creating a Sequence
+CREATE SEQUENCE dept_deptid_seq
+    INCREMENT BY 10
+    START WITH 120
+    MAXVALUE 9999
+    NOCACHE
+    NOCYCLE;
+
+-- using nextval and currval with sequence
+create sequence seq_test
+    increment by 1
+    start with 1
+    maxvalue 20
+    nocycle
+    nocache;
+
+-- using nextval and currval with sequence
+create sequence sequence_test
+    increment by 1
+    start with 1
+    maxvalue 20
+    nocycle
+    nocache;
+
+DROP TABLE EX;
+
+create table ex (
+    id number ,
+    name varchar2(20)
+);
+
+insert into ex values (seq_test.nextval , 'Tamer');
+insert into ex values (seq_test.nextval , 'Ahmed');
+insert into ex values (seq_test.nextval , 'Ali');
+insert into ex values (seq_test.nextval , 'Hossam');
+
+select * from ex;
+
+select seq_test.currval from DUAL;
+
+DROP SEQUENCE SEQUENCE_TEST;
+
+
+--- Alter s Sequence
+ALTER SEQUENCE dept_deptid_seq
+    INCREMENT BY 20
+    MAXVALUE 999999
+    NOCACHE
+    NOCYCLE;
+
+-- Indexes
+create index emp_last_name_idx on EMPLOYEES(LAST_NAME);
+
+DROP INDEX emp_last_name_idx;
+
+-- Synonyms
+CREATE SYNONYM  d_sum
+    FOR  dept_sum_vu;
+
+-- create synonym
+CREATE SYNONYM  depts
+    FOR  DEPARTMENTS;
+
+-- use synonym
+select * from depts;
+
+-- drop synonym
+drop synonym depts;
+

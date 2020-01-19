@@ -1,0 +1,28 @@
+-- chapter 02 -- Manage Schema Objects
+
+CREATE TABLE dept80 AS
+    SELECT * FROM EMPLOYEES
+where DEPARTMENT_ID = 80;
+
+drop table dept80;
+
+select * from dept80;
+
+ALTER TABLE dept80
+add (national_number VARCHAR2(9));
+
+ALTER TABLE	dept80
+    MODIFY (national_number number);
+
+ALTER TABLE  dept80
+    DROP COLUMN  job_id;
+
+ALTER TABLE	 dept80
+SET   UNUSED(national_number);
+
+ALTER TABLE  dept80
+SET   UNUSED COLUMN national_number;
+
+ALTER TABLE dept80
+DROP  UNUSED COLUMNS;
+

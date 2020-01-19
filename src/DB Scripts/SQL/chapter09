@@ -1,0 +1,108 @@
+/*    chapter 09     */ -- Using DDL Statements to Create and Manage Tables
+
+select * from hr.employees;
+select * from romani.books;
+
+-- Default option
+create table test (id number , name varchar2(20) , date_in date default sysdate);
+insert into test values (1, 'Tamer' , DEFAULT);
+
+select * from test;
+
+-- Create Table Dept
+CREATE TABLE dept  (
+    deptno      NUMBER(2),
+    dname       VARCHAR2(14),
+    loc         VARCHAR2(13),
+    create_date DATE DEFAULT SYSDATE
+                   );
+
+-- Data Types
+-- char - varchar2(size) - Number(size, s) - Date
+-- Long - BLOB - CLOB -BFILE - RAW / Long RAW
+-- rowid type
+
+
+-- rowid type
+select ROWID ,id , name , date_in from test;
+
+-- Timestamp date data type
+create table timestamp_exp (
+    id number ,
+    date_in timestamp
+);
+
+insert into timestamp_exp values (1 , sysdate);
+select * from timestamp_exp;
+
+--Timestamp with time zone
+create table timestamp_with_time_zone (
+    id number,
+    order_date timestamp with time zone
+);
+
+insert into timestamp_with_time_zone values (1, sysdate);
+select * from timestamp_with_time_zone;
+
+--Interval Year type
+create table interval_exp (
+    loan_duration Interval YEAR(3) to month
+);
+insert into interval_exp values (interval '120' month);
+select * from interval_exp;
+
+insert into interval_exp values (interval '10-2' year to  month);
+select to_char(sysdate + loan_duration, 'DD-MM-YYYY') from interval_exp;
+select * from interval_exp;
+
+-- interval day to second type
+-- same as Interval year to month
+
+--Constraint (not null , unique , primary key , foreign key , check)
+create table test1 (
+    id number constraint id_pk primary key ,
+    name varchar2(30) ,
+    grade varchar2(4) unique
+);
+
+insert into test1 values (1 , 'Tamer' , 'A');
+insert into test1 values (2 , 'Ramy' , 'B');
+
+select * from test1;
+
+create table test2 (
+    code number primary key ,
+    id_d number ,
+    surname varchar2(30) ,
+    salary number constraint min_salary_check check (salary > 1000) constraint max_salary_check check (salary < 6000) ,
+    constraint surname_fk foreign key(id_d) references test1(id)
+);
+
+insert into test2 values (1 , 2 , 'Ronny' , 4000);
+insert into test2 values (2 , 1 , 'Sonny' , 5400);
+
+select * from test1;
+select * from test2;
+
+-- can't delete cause child record found
+delete from test1
+where id = 2;
+
+-- Alter tables
+alter table test1;
+
+-- can't drop table cause is referenced by foreign keys
+drop table test1;
+
+--drop table and cut all relations to other tables
+drop table test1 cascade constraints;
+
+-- creating a table using a subquery
+create table dept80 as
+    select * from EMPLOYEES;
+
+select * from dept80;
+
+drop table dept80;
+
+-----
